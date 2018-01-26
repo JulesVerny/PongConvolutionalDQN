@@ -32,7 +32,7 @@ import matplotlib.pyplot as plt
 # =======================================================================
 #   DQN Algorith Paramaters 
 
-TOTAL_TrainTime = 50000 # Only 100 Thousands epochs  (was Million) 
+TOTAL_TrainTime = 100000 # Only 100 Thousands epochs  (was Million) 
 #
 #  Now the Processed Convolutional Image Array dimensions into the Agent  
 IMGHEIGHT = 40
@@ -140,11 +140,11 @@ def TrainExperiment():
 			ScoreCheck.append(TheGame.GScore)
 			if len(ScoreCheck) > SCORELENGTH:
 				ScoreCheck.popleft()
-			# Check Average Scores  if greater than 9.9 assume reached peak performance
+			# Check Average Scores  if greater than 9.75 assume reached peak performance
 			SSum= 0.0
 			for ScoreItem in ScoreCheck:
 				SSum = SSum + ScoreItem
-			if SSum/ SCORELENGTH > 9.9:
+			if SSum/ SCORELENGTH > 9.75:
 				print("Achieved Good Performance, Saving Best Model")
 				TheAgent.SaveBestWeights()
 				# Complete the Game Loop

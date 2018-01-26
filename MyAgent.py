@@ -112,13 +112,13 @@ class Agent:
 			self.epsilon = 0.75
 			if(self.steps>7500):
 				self.epsilon = 0.5
-			if(self.steps>12500):
+			if(self.steps>15000):
 				self.epsilon = 0.25
-			if(self.steps>25000):
+			if(self.steps>30000):
 				self.epsilon = 0.15
-			if(self.steps>40000):
+			if(self.steps>45000):
 				self.epsilon = 0.1
-			if(self.steps>48000):
+			if(self.steps>75000):
 				self.epsilon = 0.05
 	
 	# ============================================-----------------------------------------------------------
