@@ -1,8 +1,9 @@
+
 ## Pong Game Reinforcement DQN Learning ##
 
 Deep DQN Based Reinforcement Learning for simple Pong PyGame.  This python based RL Experiment plays a Py Pong Game (DQN control of Left Hand Paddle against a programmed RHS Paddle)
 
-![alt text](https://github.com/JulesVerny/PongConvolutionalDQN/blob/master/ScreenImage.PNG "Game Play")
+![picture alt](https://github.com/JulesVerny/PongConvolutionalDQN/blob/master/ScreenImage.PNG "Game Play")
 
 The Objective is simply measured as successfully returning of the Ball by the Left Paddle which is Trained and Controlled by a DQN Agent.  The programmed opponent player is a pretty hot player. So success as is simply the  ability to return ball served from Serena Williams. The Moving Average Score is calculated in the range from [-10, +10] from Complete failure to return the balls, to full success in returning the Ball. This experiment demonstrates DQN based Reinforcement Learning Agent, which improves from poor performance ~ -9.0 towards reasonably good  performance +9.9 in around 40,000 epochs.  
 
@@ -13,11 +14,11 @@ The Best Weights are then stored in BestPongModelWeights.h5, for use in Subseque
 
 This DQN code takes the 400x400 Screen image, and reduces it down to 40x40 greyscale image using skimage image processing, and stacks this up with previous 3 images into a 40x40x4 input into the Keras based Convolutional network.
 The 'successful' network compromises of 3 convolutional layers and two dense layers to make an estimate of Q, for Three Actions (Stay, Up, Down)
-![alt text](https://github.com/JulesVerny/PongConvolutionalDQN/blob/master/FinalPerfomance.png "Score growth")      
+![picture alt](https://github.com/JulesVerny/PongConvolutionalDQN/blob/master/FinalPerfomance.png "Score growth")      
 
 ### Erratic Long Term Training ###
 Note I capture and abort the DQN Training as soon as I see the Training Game performance approach and stay around +10.0 for the First time.  Regardless of any further Epsilon decay.  I have noticed that keeping the Training going, with further epsilon decay  will cause various erratic game declines and recovery growths. I cannot explain these erratic declines.  So its good to keep a watch on Training Performance and not waste days expecting the ultimate performance.
-![alt text](https://github.com/JulesVerny/PongConvolutionalDQN/blob/master/Scoreat250000.png "Erratic Long Term Perfomance")
+![picture alt](https://github.com/JulesVerny/PongConvolutionalDQN/blob/master/Scoreat250000.png "Erratic Long Term Perfomance")
 
 ### Useage ###
 
