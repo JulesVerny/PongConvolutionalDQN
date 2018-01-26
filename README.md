@@ -1,4 +1,5 @@
 ## Pong Game Reinforcement Learning
+
 Deep DQN Based Reinforcement Learning for simple Pong PyGame.  This is a python based RL experiment plays a Py Pong Game (DQN control of Left Hand Paddle against a programmed RHS Paddle)
 
 ![alt text](https://github.com/JulesVerny/PongConvolutionalDQN/blob/master/ScreenImage.PNG "Game Play")
@@ -6,8 +7,6 @@ Deep DQN Based Reinforcement Learning for simple Pong PyGame.  This is a python 
 The Objective is simply measured as successfully returning of the Ball by the Left Paddle Trained and Controlled by a DQN Agent.  
 The programmed opponent player is a pretty hot player. So success as is simply the  ability to return ball served from Serena Williams.
 The Moving Average Score is calculated in range from [-10, +10] from Complete failure to return the balls, to full success in returning the Ball. This experiment demonstrates DQN based Reinforcement Learning Agent, which improves from poor performace ~ -9.0 towards reasonably good  perfomance in around 40,000 epochs.  The Best Weights are stored in BestPongModelWeights.h5
-
-
 
 This is a Convolutional Network based RL implementation where it is based upon the Game Image state returned from the pyGame Game:
 ScreenImage = pygame.surfarray.array3d(pygame.display.get_surface()) 
@@ -21,15 +20,19 @@ The 'successful' network compromises of 3 convolutional layers and two dense lay
 ### Erratic Long Term Training 
 Note I capture and abort the DQN Training as soon as I see the Training Game performance approach and stay around +10.0 for the First time.  Regardless of any further Epsilon decay.  I have noticed that keeping the Training going, with further epsilon decay  will cause various erratic game declines and recovery growths. I cannot explain these erratic declines.  So its good to keep a watch on Training Performance and not waste days expecting the ultimate performance. 
 
-![alt text](https://github.com/JulesVerny/PongConvolutionalDQN/blob/master/Scoreat250000.PNG "Erratic Long Term Perfomance")
+![alt text](https://github.com/JulesVerny/PongConvolutionalDQN/blob/master/Scoreat250000.png "Erratic Long Term Perfomance")
 
 ### Useage
 python TrainAgent.py   : To Train the Agent  up to the point where good perfomance is observed
+
 python PlayBestAgent.py  : To Play the Trained Agent (By loading the BestPongModelWeights.h5)
+
 python PlotProgress.py   : To check the Game Score Growth during the long hours of Training
 
 The Experiment is based upon the following files:  
+
 MyPong.py   : The pygame based Pong Game based upon Siraj Raval's code
+
 MyAgent.py  : The Convolutional DQN based agent using Ben Laus Convolutional Flappy Bird DQN code as a source  
 
 ### Main Python Package Dependencies
